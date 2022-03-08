@@ -20,8 +20,9 @@ import java.awt.event.ActionEvent;
 public class Ventana extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField numero1;
+	private JTextField numero2;
+	private JTextField resultado;
 
 	/**
 	 * Launch the application.
@@ -74,36 +75,75 @@ public class Ventana extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setText("+");
-		textPane.setBounds(153, 103, 15, 20);
-		contentPane.add(textPane);
-		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setText("=");
 		textPane_1.setBounds(311, 103, 15, 20);
 		contentPane.add(textPane_1);
 		
-		textField = new JTextField();
-		textField.setBounds(40, 103, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		numero1 = new JTextField();
+		numero1.setBounds(40, 103, 86, 20);
+		contentPane.add(numero1);
+		numero1.setColumns(10);
 		
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(197, 103, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		numero2 = new JTextField();
+		numero2.setBounds(197, 103, 86, 20);
+		contentPane.add(numero2);
+		numero2.setColumns(10);
 		
 		
-		JButton btnNewButton = new JButton("Calculate");
+		JButton btnNewButton = new JButton("Suma");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				double num1 = Double.parseDouble(numero1.getText());
+				double num2 = Double.parseDouble(numero2.getText());
+				resultado.setText(String.valueOf(num1+num2));
 			}
 		});
-		btnNewButton.setBounds(10, 205, 89, 23);
+		btnNewButton.setBounds(10, 206, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		resultado = new JTextField();
+		resultado.setBounds(338, 103, 86, 20);
+		contentPane.add(resultado);
+		resultado.setColumns(10);
+		
+		JButton btnNewButton_1 = new JButton("Resta");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double num1 = Double.parseDouble(numero1.getText());
+				double num2 = Double.parseDouble(numero2.getText());
+				resultado.setText(String.valueOf(num1*num2));
+			}
+		});
+		btnNewButton_1.setBounds(109, 206, 89, 23);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Limpiar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				numero1.setText(" ");
+				numero2.setText(" ");
+				resultado.setText(" ");
+			}
+		});
+		btnNewButton_2.setBounds(335, 206, 89, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JTextPane txtpnNumero = new JTextPane();
+		txtpnNumero.setText("Numero 1");
+		txtpnNumero.setBounds(40, 72, 86, 20);
+		contentPane.add(txtpnNumero);
+		
+		JTextPane txtpnNumero_1 = new JTextPane();
+		txtpnNumero_1.setText("Numero 2");
+		txtpnNumero_1.setBounds(197, 72, 86, 23);
+		contentPane.add(txtpnNumero_1);
+		
+		JTextPane txtpnResultado = new JTextPane();
+		txtpnResultado.setText("Resultado");
+		txtpnResultado.setBounds(338, 72, 86, 20);
+		contentPane.add(txtpnResultado);
 		
 	}
 }
