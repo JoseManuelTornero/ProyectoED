@@ -31,7 +31,7 @@ public class VentanaJosema extends JPanel {
 		add(textPane_2);
 		
 		JTextPane txtpnCheetos = new JTextPane();
-		txtpnCheetos.setText("Cheetos");
+		txtpnCheetos.setText("Tornero S\u00E1nchez");
 		txtpnCheetos.setEditable(false);
 		txtpnCheetos.setBounds(133, 48, 122, 22);
 		add(txtpnCheetos);
